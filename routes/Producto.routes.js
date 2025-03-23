@@ -4,7 +4,7 @@ const multiparty= require('connect-multiparty');
 const ProductoController = require('../controllers/productos.controller');
 
 
-const md_mparty= multiparty()
+const md_mparty= multiparty({uploadDir:"./uploads"});
 const api = express.Router();
 
 api.post("/createproducto", [md_mparty] , ProductoController.createProducto);
