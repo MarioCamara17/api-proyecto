@@ -1,7 +1,8 @@
-function getFilePath(file){
-    const filePath = file.path;
-    const fileSplit = filePath.split("\\");
-    return `${fileSplit[0]}/${fileSplit[1]}`
+const path = require("path");
+
+function getFilePath(file) {
+    const uploadIndex = file.path.indexOf("uploads");
+    return file.path.substring(uploadIndex).replace(/\\/g, "/");
 }
 
 module.exports = {
